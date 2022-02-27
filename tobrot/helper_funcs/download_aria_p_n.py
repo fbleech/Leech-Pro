@@ -233,16 +233,8 @@ async def call_apropriate_function(
         if CUSTOM_FILE_NAME:
             if os.path.isfile(to_upload_file):
                 os.rename(to_upload_file,
-                          f"{CUSTOM_FILE_NAME}{to_upload_file}")
-                to_upload_file = f"{CUSTOM_FILE_NAME}{to_upload_file}"
-                        f_caption=f_caption
-                if f_caption is None:
-                    f_caption = f"{to_upload_file}"
-                buttons = [
-                    [
-                        InlineKeyboardButton('🍿 Channel 🍿', url='t.me/cinesubz')
-                    ]
-                    ]
+                          f"{{to_upload_file}CUSTOM_FILE_NAME}")
+                to_upload_file = f"{to_upload_file}{CUSTOM_FILE_NAME}"
             else:
                 for root, _, files in os.walk(to_upload_file):
                     LOGGER.info(files)
