@@ -235,8 +235,9 @@ async def call_apropriate_function(
                 os.rename(to_upload_file,
                           f"{CUSTOM_FILE_NAME}{to_upload_file}")
                 to_upload_file = f"{CUSTOM_FILE_NAME}{to_upload_file}"
-                if CUSTOM_FILE_NAME is None:
-                    to_upload_file = f"{CUSTOM_FILE_NAME}{to_upload_file}"
+                        f_caption=f_caption
+                if f_caption is None:
+                    f_caption = f"{to_upload_file}"
                 buttons = [
                     [
                         InlineKeyboardButton('🍿 Channel 🍿', url='t.me/cinesubz')
